@@ -1,0 +1,28 @@
+{
+  "name": "hx-mirror",
+  "version": "1.0.0",
+  "description": "htmx extension: mirror content afterSwap and oobAfterSwap event",
+  "main": "htmx-mirror.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperbricks/hx-mirror.git"
+  },
+  "keywords": [
+    "htmx",
+    "hx-mirror"
+  ],
+  "author": "Robbert Streng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyperbricks/hx-mirror/issues"
+  },
+  "scripts": {
+    "serve": "serve demo",
+    "build": "esbuild src/htmx-mirror.js --bundle --minify --outfile=dist/htmx-mirror.js && cp dist/htmx-mirror.js demo/"
+  },
+  "homepage": "https://github.com/hyperbricks/hx-mirror#readme",
+  "devDependencies": {
+    "esbuild": "^0.25.8",
+    "serve": "^14.2.4"
+  }
+}

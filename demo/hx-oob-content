@@ -1,0 +1,7 @@
+<div id="target1"  hx-swap-oob="innerHTML" >
+    Some content
+</div>
+
+<div id="target2"  hx-swap-oob="innerHTML" >
+    Some more content
+</div>

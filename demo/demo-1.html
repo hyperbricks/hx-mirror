@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>htmx-mirror Responsive Menu Demo</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script type="module" src="htmx-mirror.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body hx-ext="mirror" class="bg-gray-50 min-h-screen">
+    <div class="flex flex-col md:flex-row h-screen">
+        <!-- Mobile Top Bar with Hamburger -->
+        <header class="md:hidden bg-white shadow p-4 flex justify-between items-center">
+            <h1 class="text-lg font-semibold">MyApp</h1>
+            <button id="mobile-toggle" class="text-gray-600 focus:outline-none">
+                &#9776; <!-- Hamburger icon -->
+            </button>
+        </header>
+
+        <!-- Sidebar (Desktop) -->
+        <aside class="hidden md:block w-64 bg-white shadow p-4">
+            <h2 class="text-xl font-bold mb-4">Sidebar Menu</h2>
+            <nav id="desktop-menu"></nav>
+        </aside>
+
+        <!-- Mobile Menu (initially hidden) -->
+        <div id="mobile-menu-container"
+            class="md:hidden hidden bg-white shadow p-4 absolute top-14 left-0 right-0 z-10">
+            <h2 class="text-lg font-bold mb-4">Mobile Menu</h2>
+            <nav id="mobile-menu"></nav>
+        </div>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 overflow-auto">
+            <h2 class="text-2xl font-bold mb-4">Welcome to the Responsive Menu Demo</h2>
+            <p class="mb-4 text-gray-700">
+                This demo showcases how <code>htmx-mirror</code> can be used to dynamically load a navigation menu once
+                via HTMX
+                and automatically mirror it into both mobile and desktop views — without duplicate requests or
+                JavaScript.
+            </p>
+
+            <ul class="list-disc list-inside mb-4 text-gray-700">
+                <li>On <strong>mobile</strong>, click the <span class="font-mono">☰</span> hamburger icon to open the
+                    menu.</li>
+                <li>On <strong>desktop</strong>, the menu appears as a sidebar on the left.</li>
+                <li>Resize the window to switch between mobile and desktop views.</li>
+            </ul>
+
+            <p class="text-gray-700">
+                The menu content is loaded only once from <code>menu-fragment.html</code> and mirrored to both views
+                using the
+                <strong>hx-mirror</strong> extension. This keeps your UI consistent and efficient.
+            </p>
+        </main>
+    </div>
+
+    <!-- Menu Source (hidden, fetched once) -->
+    <div id="menu-source" class="hidden" hx-get="menu-fragment.html" hx-trigger="load" hx-swap="innerHTML"
+        hx-mirror="#mobile-menu, #desktop-menu">
+    </div>
+
+    <script>
+        // Toggle mobile menu visibility
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu-container');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

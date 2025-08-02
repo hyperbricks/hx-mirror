@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>htmx-mirror OOB Demo</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <script type="module" src="./htmx-mirror.js"></script>
+</head>
+
+<body hx-ext="mirror">
+    <h2>htmx-mirror OOB Demo</h2>
+
+    <button hx-get="hx-oob-content" hx-swap="none">Fetch OOB Update</button>
+
+    <div id="target1" style="border:1px solid #ccc; margin-top:10px; padding:5px;">
+        Target 1
+    </div>
+
+    <div id="target2" hx-mirror="#target3" style="border:1px solid #ccc; margin-top:10px; padding:5px;">
+        Target 2
+    </div>
+
+    <div id="target3" style="border:1px solid #ccc; margin-top:10px; padding:5px;">
+        Target 3
+    </div>
+
+</body>
+
+</html>

@@ -1,2 +1,21 @@
-# Auto detect text files and perform LF normalization
+# Normalize line endings to LF in Git, auto-convert on checkout
 * text=auto
+
+# Ensure shell scripts and config files always use LF
+*.sh text eol=lf
+*.bash text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.ts text eol=lf
+*.md text eol=lf
+
+# Treat these as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
