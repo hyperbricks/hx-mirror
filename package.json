@@ -15,7 +15,7 @@
     "hx-mirror"
   ],
   "author": "Robbert Streng",
-  "license": "MIT",
+  "license": "0BSD",
   "bugs": {
     "url": "https://github.com/hyperbricks/hx-mirror/issues"
   },
