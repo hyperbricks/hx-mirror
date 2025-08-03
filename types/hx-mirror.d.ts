@@ -1,4 +1,4 @@
-// types/htmx-mirror.d.ts
+// types/hx-mirror.d.ts
 
 import 'htmx.org';
 
