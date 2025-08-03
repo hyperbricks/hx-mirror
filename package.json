@@ -1,8 +1,11 @@
 {
   "name": "hx-mirror",
   "version": "1.0.0",
+  "type": "module",
   "description": "htmx extension: mirror content afterSwap and oobAfterSwap event",
-  "main": "htmx-mirror.js",
+  "main": "dist/hx-mirror.cjs.js",
+  "module": "dist/hx-mirror.esm.js",
+  "browser": "dist/hx-mirror.iife.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hyperbricks/hx-mirror.git"
@@ -16,13 +19,24 @@
   "bugs": {
     "url": "https://github.com/hyperbricks/hx-mirror/issues"
   },
+  "homepage": "https://github.com/hyperbricks/hx-mirror#readme",
+  "types": "types/htmx-mirror.d.ts",
+  "peerDependencies": {
+    "htmx.org": ">=1.x"
+  },
   "scripts": {
     "serve": "serve demo",
-    "build": "esbuild src/htmx-mirror.js --bundle --minify --outfile=dist/htmx-mirror.js && cp dist/htmx-mirror.js demo/"
+    "build:esm": "esbuild src/htmx-mirror.js --bundle --platform=neutral --format=esm --minify --sourcemap --outfile=dist/hx-mirror.esm.js",
+    "build:cjs": "esbuild src/htmx-mirror.js --bundle --platform=node --format=cjs --minify --sourcemap --outfile=dist/hx-mirror.cjs.js",
+    "build:iife": "esbuild src/htmx-mirror.js --bundle --platform=browser --format=iife --global-name=hxMirror --minify --sourcemap --outfile=dist/hx-mirror.iife.js",
+    "build": "npm run build:esm && npm run build:cjs && npm run build:iife && cp dist/hx-mirror.iife.js demo/",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
-  "homepage": "https://github.com/hyperbricks/hx-mirror#readme",
   "devDependencies": {
     "esbuild": "^0.25.8",
+    "esbuild-jest": "^0.5.0",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
     "serve": "^14.2.4"
   }
 }
