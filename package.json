@@ -11,7 +11,7 @@
     "url": "git+https://github.com/hyperbricks/hx-mirror.git"
   },
   "keywords": [
-    "hx",
+    "htmx",
     "hx-mirror"
   ],
   "author": "Robbert Streng",

@@ -2,8 +2,10 @@
 
 A lightweight [htmx](https://htmx.org) extension to mirror innerHTML from one element to others using the declarative hx-mirror attribute.
 
-> **Note:**  
+> *Notes:*
 > This extension requires [htmx](https://htmx.org) (included globally or imported as a module).
+
+> This project is not an official htmx extension and is not affiliated with or endorsed by the htmx project.
 
 ## Usage
 Add the [hx-ext](https://htmx.org/attributes/hx-ext/) attribute to init extension (hx-ext="hx-mirror"). Then use the `hx-mirror` attribute to any element and specify one or more CSS selectors to mirror its content to.
@@ -84,5 +86,8 @@ const hxMirror = require('hx-mirror/dist/hx-mirror.cjs.js');
 npm i
 npm run build
 npm run serve
-```
+````
+
 Then go to:  http://localhost:3000 
+
+
