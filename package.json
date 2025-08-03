@@ -1,6 +1,6 @@
 {
   "name": "hx-mirror",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "hx extension: mirror content afterSwap and oobAfterSwap event",
   "main": "dist/hx-mirror.cjs.js",
