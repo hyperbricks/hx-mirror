@@ -44,7 +44,7 @@ When you install or download `hx-mirror`, you’ll find several files in the `di
 
 ```html
 <!-- First import core htmx -->
-<script src="https://unpkg.com/htmx.org@1.9.12"></script>
+<script src="https://unpkg.com/htmx.org@2.0.6"></script>
 
 <!-- Use a specific version (recommended for stability) -->
 <script src="https://cdn.jsdelivr.net/npm/hx-mirror@1.0.0/dist/hx-mirror.iife.js"></script>
