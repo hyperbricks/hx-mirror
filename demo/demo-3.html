@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>htmx-mirror OOB Demo</title>
+    <script src="https://unpkg.com/htmx.org@2.0.6"></script>
+    <script type="module" src="hx-mirror.iife.js"></script>
+</head>
+
+<body hx-ext="mirror">
+    <!-- Source element with hx-mirror attribute -->
+    <div id="source" hx-mirror="#target1, #target2" hx-get="simple-fragment.html" hx-trigger="load"></div>
+
+    <!-- Target elements to mirror the content into -->
+    <div id="target1"></div>
+    <div id="target2"></div>
+
+</body>
+
+</html>
