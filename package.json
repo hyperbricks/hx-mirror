@@ -1,6 +1,6 @@
 {
   "name": "hx-mirror",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "A lightweight HTMX extension for mirroring content: declaratively syncs an element’s innerHTML to one or more targets using the hx-mirror attribute after HTMX swap events (htmx:afterSwap, htmx:oobAfterSwap).",
   "main": "dist/hx-mirror.cjs.js",
