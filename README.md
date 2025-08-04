@@ -1,6 +1,20 @@
 # hx-mirror
 
-A lightweight [htmx](https://htmx.org) extension to mirror innerHTML from one element to others using the declarative hx-mirror attribute.
+A lightweight [HTMX](https://htmx.org) extension for mirroring content: declaratively syncs an element’s innerHTML to one or more targets using the hx-mirror attribute after HTMX swap events (htmx:afterSwap, htmx:oobAfterSwap).
+
+### Example
+
+```html
+<body hx-ext="mirror">
+    <!-- Source element with hx-mirror attribute -->
+    <div id="source" hx-mirror="#target1, #target2" hx-get="simple-fragment.html" hx-trigger="load"></div>
+
+    <!-- Target elements to mirror the content into -->
+    <div id="target1"></div>
+    <div id="target2"></div>
+
+</body>
+```
 
 > *Notes:*
 > This extension requires [htmx](https://htmx.org) (included globally or imported as a module).
@@ -68,16 +82,7 @@ const hxMirror = require('hx-mirror/dist/hx-mirror.cjs.js');
 * **If you use a modern JS project:** Use `hx-mirror.esm.js`.
 * **If you use old-style Node.js:** Use `hx-mirror.cjs.js`.
 
-### Example
 
-```html
-<div id="source" hx-mirror="#target1, #target2">
-    This content will be mirrored.
-</div>
-
-<div id="target1"></div>
-<div id="target2"></div>
-```
 
 
 ### Demos

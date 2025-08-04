@@ -2,7 +2,7 @@
   "name": "hx-mirror",
   "version": "1.0.1",
   "type": "module",
-  "description": "hx extension: mirror content afterSwap and oobAfterSwap event",
+  "description": "A lightweight HTMX extension for mirroring content: declaratively syncs an element’s innerHTML to one or more targets using the hx-mirror attribute after HTMX swap events (htmx:afterSwap, htmx:oobAfterSwap).",
   "main": "dist/hx-mirror.cjs.js",
   "module": "dist/hx-mirror.esm.js",
   "browser": "dist/hx-mirror.iife.js",
