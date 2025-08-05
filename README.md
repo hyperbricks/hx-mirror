@@ -47,7 +47,7 @@ When you install or download `hx-mirror`, you’ll find several files in the `di
 <script src="https://unpkg.com/htmx.org@2.0.6"></script>
 
 <!-- Use a specific version (recommended for stability) -->
-<script src="https://cdn.jsdelivr.net/npm/hx-mirror@1.0.0/dist/hx-mirror.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hx-mirror@1.0.3/dist/hx-mirror.iife.js"></script>
 
 <!-- Or always get the latest version (for quick demos, not recommended for production) -->
 <script src="https://cdn.jsdelivr.net/npm/hx-mirror@latest/dist/hx-mirror.iife.js"></script>
@@ -58,14 +58,10 @@ When you install or download `hx-mirror`, you’ll find several files in the `di
 **2. Using with ES Modules / modern bundlers:**
 
 ```js
-// import htmx first if you haven’t done already
 import htmx from 'htmx.org';
-window.htmx = htmx; // optional: expose globally if needed
-
-// Now load your extension that uses htmx
-import hxMirror from 'hx-mirror';
-// or
-import hxMirror from 'hx-mirror/dist/hx-mirror.esm.js';
+import { hxMirror } from 'hx-mirror'; 
+// registering (for ES Modules)
+hxMirror(htmx);
 ```
 
 **3. Using with CommonJS (`require()`):**
