@@ -55,7 +55,4 @@ export function hxMirror(htmx) {
   });
 }
 
-// auto-install if htmx is on window
-if (typeof window !== 'undefined' && window.htmx) {
-  hxMirror(window.htmx);
-}
+export default hxMirror;
