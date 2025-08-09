@@ -2,13 +2,6 @@
 
 A lightweight [HTMX](https://htmx.org) extension for mirroring content: declaratively syncs an element’s innerHTML to one or more targets using the hx-mirror attribute after HTMX swap events (`htmx:afterSwap`, `htmx:oobAfterSwap`).
 
----
-
-# hx-mirror
-
-A lightweight [HTMX](https://htmx.org) extension for mirroring content between elements after HTMX swap events.
-
-
 ## Quick Start (Browser + CDN)
 
 ```html
