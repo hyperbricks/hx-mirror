@@ -2,6 +2,10 @@
 
 A lightweight [HTMX](https://htmx.org) extension for mirroring content: declaratively syncs an element’s innerHTML to one or more targets using the hx-mirror attribute after HTMX swap events (`htmx:afterSwap`, `htmx:oobAfterSwap`).
 
+> **Notes:**
+> This extension requires [htmx](https://htmx.org) (included globally or imported as a module). This project is not an official htmx extension and is not affiliated with or endorsed by the htmx project.
+
+
 ## Quick Start (Browser + CDN)
 
 ```html
@@ -26,28 +30,23 @@ A lightweight [HTMX](https://htmx.org) extension for mirroring content: declarat
 ```
 
 
-> **Notes:**
-> This extension requires [htmx](https://htmx.org) (included globally or imported as a module). This project is not an official htmx extension and is not affiliated with or endorsed by the htmx project.
-
 ---
 
 ## Usage
 
 Add the [hx-ext](https://htmx.org/attributes/hx-ext/) attribute to init extension (`hx-ext="mirror"`). Then use the `hx-mirror` attribute on any element and specify one or more CSS selectors to mirror its content to.
 
+
 ---
 
-## Available Builds (`dist/` folder)
+### Which file should I use?
 
-When you install or download `hx-mirror`, you’ll find several files in the `dist/` folder.
-Here’s what each file is for, and which one you should use:
+| File                  | Use case / Description                                                                                                           | Auto-registers with htmx?             | Add `hx-ext="mirror"` in HTML? |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------ |
+| **hx-mirror.iife.js** | For direct use in the browser with a `<script>` tag (CDN/local). Works out of the box — just add `hx-ext="mirror"` to your HTML. | ✅ Yes                                 | ✅ Yes                          |
+| **hx-mirror.esm.js**  | For modern JavaScript projects using ES Modules (`import`). Use with bundlers like Webpack, Vite, or Rollup.                     | ❌ No — call `hxMirror(htmx)` manually | ✅ Yes                          |
+| **hx-mirror.cjs.js**  | For Node.js or tools that use CommonJS (`require()`). Can also be used in older browser setups with a bundler that supports CJS. | ❌ No — call `hxMirror(htmx)` manually | ✅ Yes                          |
 
-| File                  | Use case / Description                                                                                                                                          |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **hx-mirror.iife.js** | For direct use in the browser with a `<script>` tag. Auto-installs if `window.htmx` exists. No build tools needed.                                              |
-| **hx-mirror.esm.js**  | For modern JavaScript projects using ES Modules (`import ... from ...`). Use this if you use a bundler like Webpack, Vite, or Rollup, or in supported browsers. |
-| **hx-mirror.cjs.js**  | For older Node.js projects or tools that use CommonJS (`require()`). Only use if your environment does not support ES Modules.                                  |
-| **.map** files        | Source maps for debugging; you usually don’t need to include these in production.                                                                               |
 
 ---
 
@@ -103,19 +102,6 @@ hxMirror(htmx);
   ...
 </body>
 ```
-
----
-
-### Which file should I use?
-
-| File                  | Use case / Description                                                                                                           | Auto-registers with htmx?             | Add `hx-ext="mirror"` in HTML? |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------ |
-| **hx-mirror.iife.js** | For direct use in the browser with a `<script>` tag (CDN/local). Works out of the box — just add `hx-ext="mirror"` to your HTML. | ✅ Yes                                 | ✅ Yes                          |
-| **hx-mirror.esm.js**  | For modern JavaScript projects using ES Modules (`import`). Use with bundlers like Webpack, Vite, or Rollup.                     | ❌ No — call `hxMirror(htmx)` manually | ✅ Yes                          |
-| **hx-mirror.cjs.js**  | For Node.js or tools that use CommonJS (`require()`). Can also be used in older browser setups with a bundler that supports CJS. | ❌ No — call `hxMirror(htmx)` manually | ✅ Yes                          |
-
-
----
 
 ### Demos
 
