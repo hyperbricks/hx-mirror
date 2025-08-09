@@ -24,9 +24,12 @@
   "peerDependencies": {
     "htmx.org": "^2.0.6"
   },
+  "sideEffects": [
+    "dist/hx-mirror.esm.js"
+  ],
   "scripts": {
     "serve": "serve demo",
-    "build:esm": "esbuild src/hx-mirror.js --bundle --platform=neutral --format=esm --minify --sourcemap --outfile=dist/hx-mirror.esm.js",
+    "build:esm": "esbuild src/hx-mirror.js --bundle --platform=neutral --format=esm --minify --tree-shaking=false --sourcemap --outfile=dist/hx-mirror.esm.js",
     "build:cjs": "esbuild src/hx-mirror.js --bundle --platform=node --format=cjs --minify --sourcemap --outfile=dist/hx-mirror.cjs.js",
     "build:iife": "esbuild src/hx-mirror.js --bundle --platform=browser --format=iife --global-name=hxMirror --minify --sourcemap --outfile=dist/hx-mirror.iife.js",
     "build": "npm run build:esm && npm run build:cjs && npm run build:iife && cp dist/hx-mirror.iife.js demo/ && cp dist/hx-mirror.iife.js.map demo/",
